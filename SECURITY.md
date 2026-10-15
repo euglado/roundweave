@@ -1,0 +1,9 @@
+# Security / Güvenlik
+
+Do not include tokens, `.env`, interaction payloads or private labels in public issues. For a vulnerability, use GitHub private vulnerability reporting if the repository offers it; otherwise post only a minimal request for a private contact channel. Do not disclose exploit details publicly while arranging contact. No response-time or security-certification claim is made.
+
+Keep token access private, reset exposed tokens in the Discord Developer Portal and rerun setup after stopping the bot. Use only View Channel + Send Messages. Restrict slash-command access by role/channel where needed. Run one process per token. Dependencies are pinned; review changes to the lockfile, license allowlist and action SHAs. Install with `npm ci --ignore-scripts` and rerun all checks before deployment. Never test with production credentials.
+
+Private previews bind user, guild, channel, expiry and ephemeral message ID. Consumed drafts cannot retry. Current access is fetched before preview/share; network errors fail closed. REST server-error retries are disabled and sends use nonce deduplication, but uncertain network delivery remains possible. Inspect the channel before recreating a draft. Restart resets cooldowns; these controls are safeguards, not a general anti-abuse system. The bot does not certify sports fairness or moderate community conduct.
+
+Türkçe: Tokenı, `.env` dosyasını veya özel form içeriğini issue'ya koymayın. Varsa GitHub özel güvenlik bildirimi kullanın; yoksa yalnızca özel iletişim yolu isteyin. Açık tokenı Portal'da sıfırlayın, botu durdurup kurulumu yenileyin. En az izinle ve tek süreçle çalıştırın; komut erişimini Discord'dan sınırlandırın. Bağımlılık değişikliklerini inceleyip testleri çalıştırın. Ağ hatasında teslimat belirsiz kalabilir; yeniden taslak açmadan kanalı kontrol edin. Bu önlemler kapsamlı moderasyon veya güvenlik sertifikası değildir.

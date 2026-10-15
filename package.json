@@ -1,0 +1,28 @@
+{
+  "name": "roundweave",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A consent-first Discord round-robin fixture planner",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "lint": "biome check .",
+    "check": "npm run lint && npm test && node scripts/verify.mjs",
+    "setup": "node scripts/setup.mjs",
+    "register": "node --env-file-if-exists=.env dist/src/register.js",
+    "start": "node --env-file-if-exists=.env dist/src/main.js"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}
